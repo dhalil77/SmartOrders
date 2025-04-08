@@ -1,0 +1,127 @@
+{
+    "version": "0.0.1",
+    "configurations": [
+
+      {
+        "name": "Run Server",
+        "type": "python",
+        "python": "C:/Users/saf196228/Desktop/Travail/Application digital labs/environement virtuel/pipe-db-env/Scripts/python.exe",
+        "request": "launch",
+        "program": "C:\\Users\\saf196228\\Desktop\\Travail\\Application digital labs\\pipe-database\\backend\\apipipedb\\manage.py",
+        "args": [
+          "runserver",
+          "localhost:8000",
+        ],
+        "django": true,
+        "justMyCode": false
+      },
+
+      {
+        "name": "Django Shell",
+        "type": "python",
+        "python": "C:/Users/saf196228/Desktop/Travail/Application digital labs/environement virtuel/pipe-db-env/Scripts/python.exe",
+        "request": "launch",
+        "program": "${workspaceFolder}\\backend\\apipipedb\\manage.py",
+        "args": [
+          "shell_plus",
+          "--ipython",
+        ],
+        "django": true,
+        "justMyCode": false
+      },
+
+      {
+        "name": "Requirements",
+        "type": "PowerShell",
+        "request": "launch",
+        "script": "pip freeze > requirements.txt",
+        "cwd": "${cwd}"
+      },
+
+      {
+        "name": "Make Migrations",
+        "type": "python",
+        "python": "C:/Users/saf196228/Desktop/Travail/Application digital labs/environement virtuel/pipe-db-env/Scripts/python.exe",
+        "request": "launch",
+        "program": "${workspaceFolder}\\backend\\apipipedb\\manage.py",
+        "args": [
+          "makemigrations",
+        ],
+        "django": true,
+        "justMyCode": false
+      },
+
+      {
+        "name": "Migrate Local",
+        "type": "python",
+        "python": "C:/Users/saf196228/Desktop/Travail/Application digital labs/environement virtuel/pipe-db-env/Scripts/python.exe",
+        "request": "launch",
+        "program": "${workspaceFolder}\\backend\\apipipedb\\manage.py",
+        "args": [
+          "migrate",
+        ],
+        "django": true,
+        "justMyCode": false
+      },
+
+      {
+        "name": "Create superuser",
+        "type": "python",
+        "python": "C:/Users/saf196228/Desktop/Travail/Application digital labs/environement virtuel/pipe-db-env/Scripts/python.exe",
+        "request": "launch",
+        "program": "${workspaceFolder}\\backend\\apipipedb\\manage.py",
+        "args": [
+          "createsuperuser",
+        ],
+        "django": true,
+        "justMyCode": false
+      },
+
+      {
+        "name": "pnpm install",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "pnpm",
+        "runtimeArgs": [
+          "install"
+        ],
+        "cwd": "${workspaceFolder}/frontend",
+        "restart": true,
+        "sourceMaps": true,
+        "outFiles": [
+          "${workspaceFolder}\\frontend\\**\\*.js"
+        ],
+        "console": "integratedTerminal"
+      },
+
+
+      {
+        "name": "Start Build",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "pnpm",
+        "runtimeArgs": [
+          "build"
+        ],
+        "cwd": "${workspaceFolder}/frontend/smartcoders-frontend",
+        "restart": true,
+        "sourceMaps": true,
+        "console": "integratedTerminal"
+      },
+
+
+      {
+        "name": "Start Front Server",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "pnpm",
+        "runtimeArgs": [
+          "dev"
+        ],
+        "cwd": "${workspaceFolder}/frontend/smartcoders-frontend",
+        "restart": true,
+        "sourceMaps": true,
+        "console": "integratedTerminal"
+      },
+    ]
+}

@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  # backend:
+  #   build:
+  #     context: ./backend/apipipedb
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend/smartcoders-frontend
+      dockerfile: Dockerfile
+    # depends_on:
+    #   - backend
+    ports:
+      - "100:100"
+    environment:
+      - NODE_ENV=production
+
