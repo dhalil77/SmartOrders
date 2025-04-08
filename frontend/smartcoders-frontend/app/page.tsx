@@ -1,8 +1,14 @@
+import Auth from "../components/Auth"; 
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <>
-      <h1> Hello Dhalil </h1>
-    </>
+    <div>
+      <h1> Bienvenue sur mon application Smart Order </h1> 
+
+      <Auth /> 
+
+    </div>
   );
-}
+};
+
+export default HomePage;
