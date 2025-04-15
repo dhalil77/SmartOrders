@@ -1,6 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import Link from "next/link"
 
 export default function ErrorPage() {
     const searchParams = useSearchParams();
@@ -8,10 +9,10 @@ export default function ErrorPage() {
 
     return (
         <div>
-            <h1>Erreur d'authentification</h1>
-            <p>Une erreur s'est produite: {error || "Inconnue"}</p>
+            <h1>Erreur </h1>
+            <p>Une erreur produite : {error || "Inconnue"}</p>
             <pre>{JSON.stringify(searchParams.toString(), null, 2)}</pre>
-            <a href="/">Retour à l'accueil</a>
+            <Link href="/">Retour </Link>
         </div>
     );
 }

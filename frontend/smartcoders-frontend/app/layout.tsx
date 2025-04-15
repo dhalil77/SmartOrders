@@ -3,7 +3,7 @@ import "./globals.css";
 
 import { getServerSession } from "next-auth";
 import SessionProvider from "../components/SessionProvider";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "./api/auth/[...nextauth]/authOptions";
 
 
 export const metadata: Metadata = {
@@ -18,8 +18,9 @@ export default async function RootLayout({
 }>) {
 
   const session = await getServerSession(authOptions);
+  
   return (
-    <html lang="en">
+    <html lang="fr">
       <body>
 
         <SessionProvider session={session}>

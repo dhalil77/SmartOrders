@@ -15,13 +15,13 @@ export default function ErrorPage() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <h1 className="text-4xl font-bold">Erreur d'authentification</h1>
-        <p className="mt-3">Une erreur s'est produite pendant l'authentification: {error}</p>
+        <h1 className="text-4xl font-bold">Erreur authentification</h1>
+        <p className="mt-3">Une erreur produite : {error}</p>
         <button
             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
             onClick={() => router.push("/")}
         >
-            Retour à l'accueil
+            Retour 
         </button>
         </div>
     );

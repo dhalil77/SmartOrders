@@ -1,5 +1,5 @@
 # Étape 1: Build Next.js
-FROM node:18 AS builder
+FROM node:18-alpine AS builder
 
 ENV NODE_ENV=production
 
@@ -16,7 +16,7 @@ RUN pnpm build
 
 
 # Étape 2: Serveur app + Nginx
-FROM node:18 AS appbase
+FROM node:18-alpine AS appbase
 
 ENV NODE_ENV=production
 
@@ -41,6 +41,6 @@ RUN apk add --no-cache nodejs npm && npm install -g pnpm
 
 WORKDIR /app
 
-EXPOSE 100
+EXPOSE 4000
 
 CMD ["sh", "-c", "pnpm start & nginx -g 'daemon off;'"]

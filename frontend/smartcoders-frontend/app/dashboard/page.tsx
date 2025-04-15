@@ -1,20 +1,33 @@
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "../api/auth/[...nextauth]/route";
-import { redirect } from "next/navigation";
+"use client";
 
-const Dashboard = async () => {
-    const session = await getServerSession(authOptions);
+import Layout from "@/components/dashboard/layout";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import AnimatedTitle from "@/components/dashboard/AnimatedTitle";
+import Loader from "@/components/ui/Loader";
 
-    // Si la session n'existe pas, rediriger vers la page d'accueil
+const Dashboard = () => {
+    const { data: session, status } = useSession();
+    const router = useRouter();
+
+    // Redirection si non connecté
+    useEffect(() => {
+        if (status === "unauthenticated") {
+        router.push("/");
+        }
+    }, [status, router]);
+
+  // Affiche le loader pendant le chargement
     if (!session) {
-        redirect("/");
+        return <Loader message="Vérification de la session..." />;
     }
 
     return (
-        <div>
-        <h1>Tableau de bord</h1>
-        <p>Bienvenue, {session.user?.name} !</p>
-        </div>
+        <Layout>
+            <AnimatedTitle />
+            <p className="mt-4 text-gray-600">Contenu principal ici...</p>
+        </Layout>
     );
 };
 
