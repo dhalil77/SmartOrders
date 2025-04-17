@@ -43,4 +43,5 @@ WORKDIR /app
 
 EXPOSE 4000
 
-CMD ["sh", "-c", "pnpm start & nginx -g 'daemon off;'"]
+CMD ["sh", "-c", "pnpm start & sleep 5 && nginx -g 'daemon off;'"]
+

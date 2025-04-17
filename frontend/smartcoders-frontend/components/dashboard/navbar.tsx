@@ -17,7 +17,8 @@ const Navbar: React.FC = () => {
 
                 {/* Desktop links */}
                 <div className="hidden md:flex items-center space-x-6">
-                    <Link href="/" className="text-gray-600 hover:text-blue-600">Accueil</Link>
+                    <Link href="/dashboard" className="text-gray-600 hover:text-blue-600">Accueil</Link>
+                    <Link href="/commande" className="block text-gray-600 hover:text-blue-600">Commande</Link>
                     <Link href="/about" className="text-gray-600 hover:text-blue-600">À propos</Link>
                     <Link href="/contact" className="text-gray-600 hover:text-blue-600">Contact</Link>
 
@@ -32,10 +33,10 @@ const Navbar: React.FC = () => {
 
                 {/* Mobile toggle */}
                 <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden text-gray-700"
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden text-gray-700"
                 >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
@@ -43,6 +44,7 @@ const Navbar: React.FC = () => {
             {isOpen && (
                 <div className="md:hidden px-4 pb-4 space-y-2">
                     <Link href="/" className="block text-gray-600 hover:text-blue-600">Accueil</Link>
+                    <Link href="/commande" className="block text-gray-600 hover:text-blue-600">Commande</Link>
                     <Link href="/about" className="block text-gray-600 hover:text-blue-600">À propos</Link>
                     <Link href="/contact" className="block text-gray-600 hover:text-blue-600">Contact</Link>
                     {session?.user && (

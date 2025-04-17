@@ -4,7 +4,6 @@ import Layout from "@/components/dashboard/layout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import AnimatedTitle from "@/components/dashboard/AnimatedTitle";
 import Loader from "@/components/ui/Loader";
 
 const Dashboard = () => {
@@ -25,9 +24,15 @@ const Dashboard = () => {
 
     return (
         <Layout>
-            <AnimatedTitle />
-            <p className="mt-4 text-gray-600">Contenu principal ici...</p>
 
+            <div className="p-8">
+                <h1 className="text-2xl font-bold">Tableau de bord</h1>
+
+                <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+                    <h2 className="text-lg font-semibold">Section Admin</h2>
+                    <p>Cette section n&apos;est visible que par les administrateurs</p>
+                </div>
+            </div>
         </Layout>
     );
 };
